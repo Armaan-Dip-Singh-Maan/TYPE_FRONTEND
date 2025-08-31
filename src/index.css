@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { @apply m-0 p-0; background: #0b1020; }
+body { @apply text-foreground; }
+
+.container { @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+/* soft spotlight background */
+.bg-spotlight { position: relative; }
+.bg-spotlight:before {
+  content: "";
+  position: absolute; inset: -20% -10% 0 -10%;
+  background: radial-gradient(600px 200px at 50% 0%, rgba(47,109,246,0.35), rgba(47,109,246,0.08) 60%, transparent 70%);
+  filter: blur(30px); pointer-events: none; z-index: -1;
+}
+
+/* typing coloring */
+.char { @apply border-b-2 border-transparent; }
+.char.correct { @apply text-success; }
+.char.wrong { @apply text-danger border-danger; }
